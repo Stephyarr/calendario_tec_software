@@ -290,9 +290,58 @@ h1 {
     opacity: 0.95;
 }
 
-/* Ajuste adaptivo para dispositivos móviles */
+/* --- OPTIMIZACIÓN EXCLUSIVA PARA CELULARES (VISTA MENSUAL EN GRID) --- */
 @media (max-width: 768px) {
-    .month-grid { grid-template-columns: 1fr; }
-    .month-day-header { display: none; }
-    .month-day { min-height: auto; }
+    /* Mantiene la grilla mensual en 7 columnas */
+    .month-grid {
+        grid-template-columns: repeat(7, 1fr) !important;
+        gap: 4px;
+        padding: 6px;
+    }
+
+    /* Muestra los encabezados de días compactos (D, L, M, M...) */
+    .month-day-header {
+        display: block !important;
+        font-size: 11px;
+        padding: 2px 0;
+    }
+
+    /* Reduce el alto de los casilleros para que entren en pantalla */
+    .month-day {
+        min-height: 55px !important;
+        padding: 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .day-number {
+        font-size: 11px;
+        margin-bottom: 2px;
+    }
+
+    /* Transforma las tarjetas de materias en puntos compactos de color */
+    .month-day .subject-card {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 1px;
+        padding: 0 !important;
+        font-size: 0 !important; /* Oculta el texto */
+        color: transparent !important;
+    }
+
+    /* Oculta los datos complementarios que no entran en la celda del celular */
+    .month-day .subject-name,
+    .month-day .subject-modality,
+    .month-day .subject-time {
+        display: none !important;
+    }
+    
+    /* Mantiene la vista semanal en formato vertical legible para móviles */
+    .week-grid {
+        grid-template-columns: 1fr !important;
+    }
 }
+

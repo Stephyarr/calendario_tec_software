@@ -176,7 +176,7 @@ function generateCalendar() {
         let grid = document.createElement('div');
         grid.className = 'month-grid';
 
-        const daysHeader = ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sáb'];
+        const daysHeader = ['D', 'L', 'M', 'M', 'J', 'V', 'S'];
         daysHeader.forEach(h => {
             let hd = document.createElement('div');
             hd.className = 'month-day-header';
