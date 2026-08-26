@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Académico 2026</title>
+    <!-- Enlace al archivo de estilos externos -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- BOTÓN NUEVO PARA MODO OSCURO -->
+    <button id="dark-mode-toggle" class="dark-toggle-btn" onclick="toggleDarkMode()">🌙 Modo Oscuro</button>
+    
+    <header>
+        <h1>Calendario Académico Personalizado</h1>
+        <p>Ciclo: 10/08/2026 al 06/12/2026</p>
+    </header>
+
+    <div class="view-switcher">
+        <button id="btn-semanal" class="btn active" onclick="switchView('semanal')">Vista Semanal</button>
+        <button id="btn-mensual" class="btn" onclick="switchView('mensual')">Vista Mensual</button>
+    </div>
+
+    <div class="container">
+        <!-- Contenedor para la Vista Semanal -->
+        <div id="vista-semanal" class="view-section active"></div>
+
+        <!-- Contenedor para la Vista Mensual -->
+        <div id="vista-mensual" class="view-section"></div>
+    </div>
+
+    <!-- Enlace al archivo de JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
