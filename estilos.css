@@ -322,20 +322,22 @@ h1 {
 
     /* Transforma las tarjetas de materias en puntos compactos de color */
     .month-day .subject-card {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        display: inline-block;
-        margin: 1px;
-        padding: 0 !important;
-        font-size: 0 !important; /* Oculta el texto */
-        color: transparent !important;
+        width: 100%;             /* Ocupa todo el ancho de la celda */
+        height: auto;            /* Se adapta al texto */
+        border-radius: 3px;      /* Bordes ligeramente redondeados */
+        display: block;
+        margin: 2px 0;
+        padding: 2px 4px !important;
+        font-size: 9px !important;  /* Tamaño de letra ultra compacto para celular */
+        color: #ffffff !important;  /* Fuerza el texto blanco */
+        text-align: center;
+        font-weight: bold;
     }
 
-    /* Oculta los datos complementarios que no entran en la celda del celular */
-    .month-day .subject-name,
+     /* Seguimos ocultando los datos extra que definitivamente no entran */
     .month-day .subject-modality,
-    .month-day .subject-time {
+    .month-day .subject-time,
+    .month-day .subject-content {
         display: none !important;
     }
     
@@ -343,5 +345,13 @@ h1 {
     .week-grid {
         grid-template-columns: 1fr !important;
     }
+
+    .month-day .subject-name-long {
+        display: none !important; /* Oculta el nombre largo en celular */
+    }
+    .month-day .subject-name-short {
+        display: block !important; /* Muestra las siglas en celular */  
+    }
+
 }
 

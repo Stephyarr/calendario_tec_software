@@ -198,8 +198,9 @@ function generateCalendar() {
             let dayDiv = document.createElement('div');
             dayDiv.className = 'month-day';
 
+            // Ajuste dinámico de opacidad usando la variable CSS configurada
             if (loopDate < startDate || loopDate > endDate) {
-                dayDiv.style.opacity = '0.3';
+                dayDiv.style.opacity = 'var(--past-opacity, 0.3)';
             }
 
             let dayNum = document.createElement('span');
@@ -210,10 +211,19 @@ function generateCalendar() {
             let dayOfWeek = loopDate.getDay();
             if (loopDate >= startDate && loopDate <= endDate && scheduleConfig[dayOfWeek]) {
                 let course = scheduleConfig[dayOfWeek];
+
+                // Mapeo inteligente de nombres cortos para asegurar espacio en celulares
+                let shortName = course.name;
+                if (course.name === 'Base de Datos') shortName = 'BD';
+                if (course.name === 'Lógica Computacional') shortName = 'Lógica';
+                if (course.name === 'Modelado y Diseño de Software') shortName = 'Modelado';
+
                 dayDiv.innerHTML += `
-                    <div class="subject-card ${course.classCode}" style="font-size:11px; padding:4px; margin-bottom:2px;">
-                        <span class="subject-name" style="font-size:11px;">${course.name}</span>
-                        <span class="subject-modality" style="font-size:9px; padding:1px 3px;">${course.type}</span>
+                    <div class="subject-card ${course.classCode}">
+                        <!-- El nombre largo se oculta en celulares por CSS; el corto se oculta en PC -->
+                        <span class="subject-name-long">${course.name}</span>
+                        <span class="subject-name-short">${shortName}</span>
+                        <span class="subject-modality">${course.type}</span>
                     </div>
                 `;
             }
