@@ -25,7 +25,7 @@
 [data-theme="dark"] {
     --bg-color: #0b132b;       /* Azul marino muy oscuro para el fondo */
     --card-bg: #1c2541;        /* Azul grisáceo para las tarjetas y grillas */
-    --text-main: #edf2f4;      /* Blanco azulado de alta legibilidad */
+    --text-main: #102d38;      /* Blanco azulado de alta legibilidad */
     --text-muted: #9ba4b5;     /* Gris azulado para textos secundarios */
     --accent-blue: #4cc9f0;    /* Azul celeste brillante para destacar */
     --border-color: #3a506b;   /* Azul intermedio para líneas divisorias */
